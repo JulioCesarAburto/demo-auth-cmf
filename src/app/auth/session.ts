@@ -6,6 +6,8 @@ import {SessionPayload} from './definitions';
 import {cookies} from 'next/headers';
 import {redirect} from 'next/navigation';
 
+
+
 const secretKey = 'secret-key';
 const encodedKey = new TextEncoder().encode(secretKey);
 export async function encrypt(payload: SessionPayload) {
