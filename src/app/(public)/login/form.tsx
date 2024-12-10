@@ -1,19 +1,10 @@
 'use client';
-
-import React, {useState} from 'react';
+import React from 'react';
 import {authLoginDemo} from '@/app/auth/login';
-
 import {useFormState, useFormStatus} from 'react-dom';
-import Link from 'next/link';
-// Estilos personalizados para el TextField
 
-// Componente Login
 export function LoginForm() {
-  const [showPassword, setShowPassword] = useState(false);
-
-  // Formulario con Formik
   const [state, action] = useFormState(authLoginDemo, undefined);
-  console.log('🚀 ~ LoginForm ~ action:', action);
   return (
     <form
       action={action}
@@ -39,12 +30,14 @@ export function LoginForm() {
             placeholder="m@example.com"
             type="email"
             style={{
+              color: '#000',
               padding: '10px',
               fontSize: '0.9rem',
               border: '1px solid #ccc',
               borderRadius: '4px',
               width: '100%',
               boxSizing: 'border-box',
+              backgroundColor: '#fff',
             }}
             required
           />
@@ -73,28 +66,20 @@ export function LoginForm() {
               style={{fontWeight: 'bold', fontSize: '0.9rem', color: '#000'}}>
               Password
             </label>
-            <Link
-              href="#"
-              style={{
-                fontSize: '0.85rem',
-                textDecoration: 'underline',
-                color: '#0070f3',
-                cursor: 'pointer',
-              }}>
-              Forgot your password?
-            </Link>
           </div>
           <input
             id="password"
             type="password"
             name="password"
             style={{
+              color: '#000',
               padding: '10px',
               fontSize: '0.9rem',
               border: '1px solid #ccc',
               borderRadius: '4px',
               width: '100%',
               boxSizing: 'border-box',
+              backgroundColor: '#fff',
             }}
             required
           />
@@ -123,7 +108,23 @@ export function LoginButton() {
   const {pending} = useFormStatus();
 
   return (
-    <button aria-disabled={pending} type="submit">
+    <button
+      aria-disabled={pending}
+      type="submit"
+      style={{
+        display: 'inline-block',
+        width: '100%',
+        padding: '12px 16px',
+        fontSize: '1rem',
+        fontWeight: 'bold',
+        border: 'none',
+        borderRadius: '6px',
+        backgroundColor: '#0070f3',
+        color: '#ffffff',
+        cursor: pending ? 'not-allowed' : 'pointer',
+        opacity: pending ? 0.7 : 1,
+        transition: 'opacity 0.3s ease',
+      }}>
       {pending ? 'Submitting...' : 'Sign up'}
     </button>
   );
