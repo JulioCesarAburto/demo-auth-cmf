@@ -1,0 +1,51 @@
+/* Contenedor principal */
+.container {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Título principal */
+.title {
+  font-size: 2rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Lista de tarjetas */
+.cardList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Tarjeta individual */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Título de la tarjeta */
+.cardTitle {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+/* Detalles de la tarjeta */
+.cardDetails {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
