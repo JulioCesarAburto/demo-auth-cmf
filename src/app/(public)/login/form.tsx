@@ -64,7 +64,7 @@ export function LoginForm() {
             <label
               htmlFor="password"
               style={{fontWeight: 'bold', fontSize: '0.9rem', color: '#000'}}>
-              Password
+              Contraseña
             </label>
           </div>
           <input
@@ -125,7 +125,7 @@ export function LoginButton() {
         opacity: pending ? 0.7 : 1,
         transition: 'opacity 0.3s ease',
       }}>
-      {pending ? 'Submitting...' : 'Sign up'}
+      {pending ? 'Cargando...' : 'Iniciar Sesión'}
     </button>
   );
 }

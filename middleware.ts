@@ -15,7 +15,6 @@ export default async function middleware(req: NextRequest) {
   // 3. Decrypt the session from the cookie
   const cookie = (await cookies()).get('session')?.value;
   const session = cookie ? JSON.parse(cookie) : null;
-  console.log("🚀 ~ middleware ~ session:", session)
 
   // 4. Redirect
   if (isProtectedRoute && !session?.email) {

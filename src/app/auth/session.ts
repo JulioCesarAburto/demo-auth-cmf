@@ -6,8 +6,6 @@ import {SessionPayload} from './definitions';
 import {cookies} from 'next/headers';
 import {redirect} from 'next/navigation';
 
-
-
 const secretKey = 'secret-key';
 const encodedKey = new TextEncoder().encode(secretKey);
 export async function encrypt(payload: SessionPayload) {
@@ -25,8 +23,7 @@ export async function decrypt(session: string | undefined = '') {
     });
     return payload;
   } catch (error) {
-    console.log("🚀 ~ decrypt ~ error:", error)
-    console.log('Failed to verify session');
+    console.log('🚀 ~ decrypt ~ error:', error);
   }
 }
 export async function createSession(email: string) {
@@ -41,7 +38,7 @@ export async function createSession(email: string) {
     sameSite: 'lax',
     path: '/',
   });
-  redirect('/dashboard');
+  redirect('/home');
 }
 
 export async function deleteSession() {

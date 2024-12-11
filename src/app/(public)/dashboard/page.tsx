@@ -1,16 +1,10 @@
-// import {DataApi} from '@/services/DataApi';
-import { ButtonDelete } from '../components/Button';
-import {DataApi} from '../services/DataApi';
+import {DataApi} from '@/app/services/DataApi';
 import styles from './homepage.module.css';
+import {ButtonDelete} from '@/app/components/Button';
 
-export default async function NamePage({
-  searchParams,
-}: {
-  searchParams: {number?: string};
-}) {
-  const limit = searchParams.number ? parseInt(searchParams.number, 10) : 10; // Valor predeterminado: 10
+export default async function NamePage() {
+  const limit: number = 10;
   const data = await DataApi({limit});
-
   return (
     <div className={styles.container}>
       <ButtonDelete />
